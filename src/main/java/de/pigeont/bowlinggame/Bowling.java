@@ -20,11 +20,11 @@ public final class Bowling {
             GameStarter.createNewGame();
 
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Exception: game terminated unexcepted");
+            logger.log(Level.SEVERE, "Exception: game terminated unexcepted", e);
             logger.log(Level.FINE, e.getMessage());
             System.exit(ReturnValue.FAILURE.getReturnCode());
         }
-        System.exit(ReturnValue.SUCCESS.getReturnCode());
+
     }
 
     enum ReturnValue {
