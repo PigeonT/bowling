@@ -3,12 +3,25 @@ version '1.0.0'
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
+
 
 repositories {
     mavenCentral()
 }
 
+sourceSets {
+    main.java.srcDir "src/main"
+
+    test.java.srcDir "src/test"
+}
+
 dependencies {
+    compile 'com.googlecode.lanterna:lanterna:3.0.0-rc1'
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+jar {
+    from configurations.compile.collect { zipTree it }
+    manifest.attributes "Main-Class": "de.pigeont.bowlinggame.Bowling"
 }
