@@ -1,6 +1,7 @@
 package de.pigeont.bowlinggame.exception;
 
-public final class RenderException extends Exception {
+@Deprecated
+public final class RenderException extends BowlingException {
     public RenderException() {
     }
 
