@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 public final class Bowling {
     private Bowling() {
     }
+
     public static void main(String[] args) {
         Configuration.init();
         Logger logger = Configuration.logger;
@@ -14,7 +15,6 @@ public final class Bowling {
 
         try {
             createNewGame();
-
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Exception: game terminated unexcepted", e);
             logger.log(Level.FINE, e.getMessage());
@@ -29,10 +29,14 @@ public final class Bowling {
         GameStatusManager gm = GameStatusManager.createGameStatusManager(Configuration.logger);
         GameRender gr = GameRender.createRender(Configuration.logger);
 
-        gcontroller.setStatusManager(gm);
-        gcontroller.setGameRender(gr);
-
-        gm.setGameController(gcontroller);
+        try {
+            gcontroller.setStatusManager(gm);
+            gcontroller.setGameRender(gr);
+            gm.setGameController(gcontroller);
+        } catch (ReassignmentException e) {
+            Configuration.logger.log(Level.WARNING,
+                    "reassignment of bowling component, all the component is immutable", e);
+        }
         gr.setController(gcontroller);
 
         gcontroller.startNewGame();
