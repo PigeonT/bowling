@@ -24,7 +24,7 @@ public final class Bowling {
             logger.log(Level.FINE, e.getMessage());
             System.exit(ReturnValue.FAILURE.getReturnCode());
         }
-
+        System.exit(ReturnValue.SUCCESS.getReturnCode());
     }
 
     enum ReturnValue {
@@ -33,7 +33,7 @@ public final class Bowling {
 
         private int returnCode;
 
-        private ReturnValue(int returnCode) {
+        ReturnValue(int returnCode) {
             this.returnCode = returnCode;
         }
 

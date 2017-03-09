@@ -175,7 +175,15 @@ public class GameController {
                         logger.log(Level.INFO, "use enter q to stop game");
                         break;
                     case '\n':
-
+                        if (!manager.powerIsSet()) {
+                            manager.setPower(render.getProgressbar());
+                            render.resetProgressbar();
+                            break;
+                        }
+                        if (!manager.hookIsSet()) {
+                            manager.setHook(render.getProgressbar());
+                            break;
+                        }
                     default:
                         break;
                 }

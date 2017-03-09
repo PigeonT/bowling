@@ -20,13 +20,13 @@ public final class Configuration {
     private static final class BowlingconsoleHandler extends Handler {
         @Override
         public void publish(LogRecord record) {
-            if (getFormatter() == null) {
+            if (null == getFormatter()) {
                 setFormatter(new SimpleFormatter());
             }
 
             try {
                 String message = getFormatter().format(record);
-                if (record.getLevel().intValue() >= Level.WARNING.intValue()) {
+                if (Level.WARNING.intValue() <= record.getLevel().intValue()) {
                     System.err.write(message.getBytes());
                 } else {
                     System.out.write(message.getBytes());

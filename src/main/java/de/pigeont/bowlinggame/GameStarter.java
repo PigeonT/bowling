@@ -19,7 +19,7 @@ final class GameStarter {
         gcontroller.setGameRender(gr);
 
         gm.setGameController(gcontroller);
-        gr.setGameController(gcontroller);
+        gr.setController(gcontroller);
 
         gcontroller.startNewGame();
     }
