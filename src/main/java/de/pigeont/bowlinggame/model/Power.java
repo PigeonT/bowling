@@ -1,4 +1,4 @@
-package de.pigeont.bowlinggame.gameobjects.model;
+package de.pigeont.bowlinggame.model;
 
 public final class Power {
     private static final Integer EMPTY = -1;

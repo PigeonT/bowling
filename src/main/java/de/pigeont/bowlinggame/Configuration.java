@@ -1,4 +1,4 @@
-package de.pigeont.bowlinggame.config;
+package de.pigeont.bowlinggame;
 
 import java.util.logging.*;
 

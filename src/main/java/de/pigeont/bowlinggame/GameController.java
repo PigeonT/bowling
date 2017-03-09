@@ -1,4 +1,4 @@
-package de.pigeont.bowlinggame.controller;
+package de.pigeont.bowlinggame;
 
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
@@ -7,8 +7,6 @@ import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
 import com.sun.istack.internal.NotNull;
-import de.pigeont.bowlinggame.gameobjects.GameStatusManager;
-import de.pigeont.bowlinggame.render.GameRender;
 
 import java.io.IOException;
 import java.util.List;

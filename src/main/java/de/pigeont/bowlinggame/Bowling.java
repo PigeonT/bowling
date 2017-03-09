@@ -1,7 +1,5 @@
 package de.pigeont.bowlinggame;
 
-import de.pigeont.bowlinggame.config.Configuration;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -9,15 +7,13 @@ import java.util.logging.Logger;
 public final class Bowling {
     private Bowling() {
     }
-
-
     public static void main(String[] args) {
         Configuration.init();
         Logger logger = Configuration.logger;
         logger.log(Level.INFO, "game started");
 
         try {
-            GameStarter.createNewGame();
+            createNewGame();
 
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Exception: game terminated unexcepted", e);
@@ -25,6 +21,21 @@ public final class Bowling {
             System.exit(ReturnValue.FAILURE.getReturnCode());
         }
         System.exit(ReturnValue.SUCCESS.getReturnCode());
+    }
+
+    private static void createNewGame() {
+        //all single object pattern and dependency injection
+        GameController gcontroller = GameController.createController(Configuration.logger);
+        GameStatusManager gm = GameStatusManager.createGameStatusManager(Configuration.logger);
+        GameRender gr = GameRender.createRender(Configuration.logger);
+
+        gcontroller.setStatusManager(gm);
+        gcontroller.setGameRender(gr);
+
+        gm.setGameController(gcontroller);
+        gr.setController(gcontroller);
+
+        gcontroller.startNewGame();
     }
 
     enum ReturnValue {

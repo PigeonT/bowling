@@ -1,4 +1,4 @@
-package de.pigeont.bowlinggame.gameobjects.model;
+package de.pigeont.bowlinggame.model;
 
 final public class Ball {
     private Integer x;

@@ -1,10 +1,9 @@
-package de.pigeont.bowlinggame.gameobjects;
+package de.pigeont.bowlinggame.model;
 
 import java.util.Arrays;
 import java.util.List;
 
-//mock like database in memory
-public final class Repository {
+public final class Pins {
     public static final List<Integer[]> ORIGIN_PIN = Arrays.asList(
             new Integer[][]{
                     {12, 2}, {14, 2}, {16, 2}, {18, 2},
@@ -13,6 +12,16 @@ public final class Repository {
                     {15, 5}
             }
     );
+
+    private static class Pin {
+        private Integer x;
+        private Integer y;
+
+        Pin(Integer x, Integer y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
 
 
 }

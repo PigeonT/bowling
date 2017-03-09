@@ -1,11 +1,10 @@
-package de.pigeont.bowlinggame.gameobjects;
+package de.pigeont.bowlinggame;
 
 import com.sun.istack.internal.NotNull;
-import de.pigeont.bowlinggame.controller.GameController;
-import de.pigeont.bowlinggame.gameobjects.model.Ball;
-import de.pigeont.bowlinggame.gameobjects.model.Hook;
-import de.pigeont.bowlinggame.gameobjects.model.Pins;
-import de.pigeont.bowlinggame.gameobjects.model.Power;
+import de.pigeont.bowlinggame.model.Ball;
+import de.pigeont.bowlinggame.model.Hook;
+import de.pigeont.bowlinggame.model.Pins;
+import de.pigeont.bowlinggame.model.Power;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -38,6 +37,7 @@ public final class GameStatusManager {
     }
 
     public void update() {
+        if (!powerIsSet() || !hookIsSet()) return;
 
     }
 
