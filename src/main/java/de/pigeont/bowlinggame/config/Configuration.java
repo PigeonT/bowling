@@ -1,10 +1,12 @@
-package de.pigeont.bowlinggame;
+package de.pigeont.bowlinggame.config;
+
+import de.pigeont.bowlinggame.constants.GlobalConstants;
 
 import java.util.logging.*;
 
 public final class Configuration {
 
-    private static final String LOGGER = "BolwingGame";
+    private static final String LOGGER = GlobalConstants.LOGGER;
     private static Handler consoleHandler = new BowlingconsoleHandler();
     public static final Logger logger = Logger.getLogger(LOGGER);
 
@@ -18,9 +20,15 @@ public final class Configuration {
     }
 
     private static final class BowlingconsoleHandler extends Handler {
+        private boolean debug;
+
+        BowlingconsoleHandler() {
+            super();
+            debug = false;
+        }
         @Override
         public void publish(LogRecord record) {
-            if (null == getFormatter()) {
+            if (getFormatter() == null) {
                 setFormatter(new SimpleFormatter());
             }
 
