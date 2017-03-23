@@ -6,8 +6,8 @@ import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
-import com.sun.istack.internal.NotNull;
 import de.pigeont.bowlinggame.controller.GameController;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.util.function.Consumer;

@@ -1,6 +1,5 @@
 package de.pigeont.bowlinggame.model;
 
-import com.sun.istack.internal.NotNull;
 import de.pigeont.bowlinggame.constants.GlobalConstants;
 import de.pigeont.bowlinggame.controller.GameController;
 import de.pigeont.bowlinggame.model.items.Hook;
@@ -8,6 +7,7 @@ import de.pigeont.bowlinggame.model.items.Item;
 import de.pigeont.bowlinggame.model.items.Power;
 import de.pigeont.bowlinggame.model.sprites.Ball;
 import de.pigeont.bowlinggame.model.sprites.Pin;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;

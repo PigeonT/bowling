@@ -6,7 +6,7 @@ import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
-import com.sun.istack.internal.NotNull;
+import org.jetbrains.annotations.NotNull;
 import de.pigeont.bowlinggame.constants.GlobalConstants;
 import de.pigeont.bowlinggame.model.GameManager;
 import de.pigeont.bowlinggame.model.items.Hook;
